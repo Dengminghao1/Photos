@@ -175,7 +175,7 @@
         }
 
 
-        .box:hover ol li:nth-child(1) {
+       .box.clicked ol li:nth-child(1) {
             -webkit-transform: translateZ(300px);
             width: 400px;
             height: 400px;
@@ -184,7 +184,7 @@
             top: -100px;
         }
 
-        .box:hover ol li:nth-child(2) {
+        .box.clicked ol li:nth-child(2) {
             -webkit-transform: rotateX(180deg) translateZ(300px);
             width: 400px;
             height: 400px;
@@ -193,7 +193,7 @@
             top: -100px;
         }
 
-        .box:hover ol li:nth-child(3) {
+        .box.clicked ol li:nth-child(3) {
             -webkit-transform: rotateX(-90deg) translateZ(300px);
             width: 400px;
             height: 400px;
@@ -202,7 +202,7 @@
             top: -100px;
         }
 
-        .box:hover ol li:nth-child(4) {
+        .box.clicked ol li:nth-child(4) {
             -webkit-transform: rotateX(90deg) translateZ(300px);
             width: 400px;
             height: 400px;
@@ -211,7 +211,7 @@
             top: -100px;
         }
 
-        .box:hover ol li:nth-child(5) {
+        .box.clicked ol li:nth-child(5) {
             -webkit-transform: rotateY(-90deg) translateZ(300px);
             width: 400px;
             height: 400px;
@@ -220,7 +220,7 @@
             top: -100px;
         }
 
-        .box:hover ol li:nth-child(6) {
+        .box.clicked ol li:nth-child(6) {
             -webkit-transform: rotateY(90deg) translateZ(300px);
             width: 400px;
             height: 400px;
@@ -263,6 +263,10 @@
 
 <script>
     let box = document.querySelectorAll('.box')[0];
+        box.addEventListener('click', function() {
+        // 切换 clicked 类，点击时添加，再次点击时移除
+        this.classList.toggle('clicked');
+    });
     if (navigator.userAgent.match(/(phone|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
         box.style.top = '45%';
         box.style.left = '42%';        
